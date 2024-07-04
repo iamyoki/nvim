@@ -22,25 +22,10 @@ return {
 
           local formatter = LazyVim.lsp.formatter({
             name = "eslint: lsp",
-            primary = false,
+            primary = true,
             priority = 200,
             filter = "eslint",
           })
-
-          local eslint_filetypes = {
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-          }
-
-          -- Modify the formatter to set primary based on filetype
-          local original_format = formatter.format
-          formatter.format = function(buf)
-            local ft = vim.bo[buf].filetype
-            formatter.primary = vim.tbl_contains(eslint_filetypes, ft)
-            return original_format(buf)
-          end
 
           -- Use EslintFixAll on Neovim < 0.10.0
           if not pcall(require, "vim.lsp._dynamic") then
