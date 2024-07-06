@@ -7,7 +7,7 @@ local del = vim.keymap.del
 
 -- clipboard
 map({ "n", "v" }, "<C-y>", '"+y', { desc = "Yank into sys clipboard" })
-map({ "n", "v" }, "<C-d>", '"+d', { desc = "Delete into sys clipboard" })
+-- map({ "n", "v" }, "<C-d>", '"+d', { desc = "Delete into sys clipboard" })
 map({ "n", "v" }, "<C-x>", '"+cc', { desc = "Cut into sys clipboard" })
 
 -- toggleterm
