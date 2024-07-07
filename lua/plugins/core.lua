@@ -6,6 +6,8 @@ return {
   {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
+    lazy = true,
+    priority = 1000,
     opts = {
       transparent = true,
       colors = {
@@ -21,7 +23,7 @@ return {
     },
   },
 
-  -- load color schema
+  -- load color scheme
   {
     "LazyVim/LazyVim",
     opts = {
