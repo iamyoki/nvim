@@ -32,6 +32,6 @@ map("n", "zk", require("utils.toggle_keep_center"), { desc = "Toggle keep center
 map(
   { "n", "v", "t" },
   "<leader>fd",
-  require("utils.find_files_in_cur_dir").find_files_in_cur_dir,
+  require("utils.find_files_in_cur_dir"),
   { desc = "Find files in current directory" }
 )
