@@ -9,17 +9,11 @@ local del = vim.keymap.del
 map({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank into sys clipboard" })
 map({ "n", "v" }, "<leader>Y", '"+Y', { desc = "Yank line into sys clipboard" })
 
--- p last yanked
-map({ "n", "v" }, "p", function()
-  local reg = vim.v.register
-  if reg == '"' then
-    print("Paste last yank")
-    return '"0p'
-  else
-    print("Paste reg: " .. reg)
-    return '"' .. reg .. "p"
-  end
-end, { expr = true, desc = "Paste last yank" })
+-- paste last yank
+map({ "n", "v", "t" }, "0p", '"0p', { desc = "Paste last yank" })
+map({ "n", "v", "t" }, "0P", '"0P', { desc = "Paste last yank above" })
+map({ "n", "v", "t" }, "<leader>pp", '"0p', { desc = "Paste last yank" })
+map({ "n", "v", "t" }, "<leader>pP", '"0P', { desc = "Paste last yank above" })
 
 -- cut line and sync sys clipboard
 map("n", "<C-x>", '"+cc', { desc = "Cut into sys clipboard" })
@@ -32,13 +26,12 @@ map({ "n", "v", "t" }, "<leader>t", "<cmd>exe v:count1 . 'ToggleTerm'<CR>", { de
 del("t", "<C-l>")
 
 -- keep center
-vim.g.default_scrolloff = vim.o.scrolloff
-map("n", "zk", function()
-  if vim.o.scrolloff ~= vim.g.default_scrolloff then
-    vim.o.scrolloff = vim.g.default_scrolloff
-    print("Keep center off")
-  else
-    vim.o.scrolloff = 999
-    print("Keep center on")
-  end
-end, { desc = "Toggle keep center" })
+map("n", "zk", require("utils.toggle_keep_center"), { desc = "Toggle keep center" })
+
+-- find files in current directory relative to active buffer
+map(
+  { "n", "v", "t" },
+  "<leader>fd",
+  require("utils.find_files_in_cur_dir").find_files_in_cur_dir,
+  { desc = "Find files in current directory" }
+)
