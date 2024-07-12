@@ -16,5 +16,11 @@ return {
         },
       },
     },
+    highlights = {
+      buffer_selected = {
+        fg = "lavender",
+        bold = true,
+      },
+    },
   },
 }
