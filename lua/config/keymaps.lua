@@ -27,3 +27,6 @@ map("n", "zk", require("utils.toggle_keep_center"), { desc = "Toggle keep center
 
 -- find files in current directory relative to active buffer
 map({ "n", "v" }, "<leader>fd", require("utils.find_files_in_cur_dir"), { desc = "Find files in current directory" })
+
+-- format
+map({ "n", "v", "i" }, "<A-S-f>", "<cmd>LazyFormat<CR>", { desc = "Format" })
