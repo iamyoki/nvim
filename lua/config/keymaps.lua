@@ -20,7 +20,7 @@ map("n", "<C-x>", '"+cc', { desc = "Cut into sys clipboard" })
 map("v", "<C-x>", '"+c', { desc = "Cut selection into sys clipboard" })
 
 -- delete ctrl+l so the terminal can clear screen as expected
-del("t", "<C-l>")
+-- del("t", "<C-l>")
 
 -- keep center
 map("n", "zk", require("utils.toggle_keep_center"), { desc = "Toggle keep center" })
@@ -30,3 +30,6 @@ map({ "n", "v" }, "<leader>fd", require("utils.find_files_in_cur_dir"), { desc =
 
 -- format
 map({ "n", "v", "i" }, "<A-S-f>", "<cmd>LazyFormat<CR>", { desc = "Format" })
+
+-- organize imports
+map({ "n", "v", "i" }, "<A-S-o>", require("utils/source_action_organize_imports"), { desc = "Organize imports" })
