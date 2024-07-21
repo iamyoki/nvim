@@ -10,8 +10,8 @@ return {
         {
           filetype = "neo-tree",
           text = "󰨞 Visual Studio Code",
-          -- highlight = "Directory",
-          separator = false,
+          highlight = "Directory",
+          separator = true,
           text_align = "left",
         },
       },
