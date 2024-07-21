@@ -2,17 +2,16 @@ return {
   "akinsho/bufferline.nvim",
   opts = {
     options = {
-      separator_style = "slant",
-      -- indicator = { style = "none" },
+      separator_style = { "│", "│" },
+      indicator = { style = "none" },
       always_show_bufferline = true,
       max_name_length = 30,
       offsets = {
         {
-          enabled = false,
           filetype = "neo-tree",
           text = "󰨞 Visual Studio Code",
           -- highlight = "Directory",
-          separator = true,
+          separator = false,
           text_align = "left",
         },
       },
