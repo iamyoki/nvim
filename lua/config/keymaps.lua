@@ -20,7 +20,7 @@ map("n", "<C-x>", '"+cc', { desc = "Cut into sys clipboard" })
 map("v", "<C-x>", '"+c', { desc = "Cut selection into sys clipboard" })
 
 -- delete ctrl+l so the terminal can clear screen as expected
--- del("t", "<C-l>")
+del("t", "<C-l>")
 
 -- keep center
 map("n", "zk", require("utils.toggle_keep_center"), { desc = "Toggle keep center" })
