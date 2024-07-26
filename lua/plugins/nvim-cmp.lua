@@ -14,12 +14,12 @@ return {
           cmp.complete()
         end
       end, { "i", "s", "n" }),
-      ["<Tab>"] = cmp.mapping(function()
-        cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Select })
-      end, { "i", "s", "n" }),
-      ["<S-Tab>"] = cmp.mapping(function()
-        cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Select })
-      end, { "i", "s", "n" }),
+      -- ["<Tab>"] = cmp.mapping(function()
+      --   cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Select })
+      -- end, { "i", "s", "n" }),
+      -- ["<S-Tab>"] = cmp.mapping(function()
+      --   cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Select })
+      -- end, { "i", "s", "n" }),
     })
 
     return opts

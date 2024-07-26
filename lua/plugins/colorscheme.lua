@@ -3,58 +3,54 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
-    opts = {
-      flavor = "macchiato",
-      transparent_background = true,
-    },
+    lazy = true,
   },
 
   -- add kanagawa
   {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
-    priority = 1000,
+    lazy = true,
     opts = {
-      transparent = true,
+      -- transparent = true,
       colors = {
         theme = {
           all = {
             ui = {
+              whitespace = "#2A2A40",
               bg_gutter = "none",
               bg_dim = "none",
             },
           },
         },
       },
+      overrides = function(colors)
+        local theme = colors.theme
+        return {
+          TabLineSel = { bg = theme.ui.special },
+        }
+      end,
     },
   },
 
   -- github-nvim-theme
-  { "projekt0n/github-nvim-theme" },
+  { "projekt0n/github-nvim-theme", lazy = true },
 
   -- onedark
-  { "navarasu/onedark.nvim" },
+  { "navarasu/onedark.nvim", lazy = true },
 
   -- nightfox
-  {
-    "EdenEast/nightfox.nvim",
-    opts = {
-      options = {
-        transparent = true,
-      },
-    },
-  },
+  { "EdenEast/nightfox.nvim", lazy = true },
 
   -- load color scheme
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-frappe",
-      -- colorscheme = "kanagawa",
+      -- colorscheme = "catppuccin",
+      colorscheme = "kanagawa",
       -- colorscheme = "github_dark",
       -- colorscheme = "onedark",
-      colorscheme = "nordfox",
+      -- colorscheme = "nordfox",
     },
   },
 }
