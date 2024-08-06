@@ -12,8 +12,6 @@ map({ "n", "v" }, "<leader>Y", '"+Y', { desc = "Yank line into sys clipboard" })
 -- paste last yank
 map({ "n", "v" }, "0p", '"0p', { desc = "Paste last yank" })
 map({ "n", "v" }, "0P", '"0P', { desc = "Paste last yank above" })
-map({ "n", "v" }, "<leader>pp", '"0p', { desc = "Paste last yank" })
-map({ "n", "v" }, "<leader>pP", '"0P', { desc = "Paste last yank above" })
 
 -- cut line and sync sys clipboard
 map("n", "<C-x>", '"+cc', { desc = "Cut into sys clipboard" })
@@ -33,3 +31,7 @@ map({ "n", "v", "i" }, "<A-S-f>", "<cmd>LazyFormat<CR>", { desc = "Format" })
 
 -- organize imports
 map({ "n", "v", "i" }, "<A-S-o>", require("utils/source_action_organize_imports"), { desc = "Organize imports" })
+
+-- windows
+map({ "n", "i", "t" }, "<A-1>", "<cmd>wincmd W<cr>", { desc = "Go to prev window" })
+map({ "n", "i", "t" }, "<A-2>", "<cmd>wincmd w<cr>", { desc = "Go to next window" })
